@@ -14,11 +14,27 @@ defmodule Mix.Tasks.Compile.Rebar3 do
 
     case Mix.shell().cmd(cmd, print_app: true) do
       0 ->
-        {:ok, []}
+        :ok
 
       _other ->
         IO.puts("rebar3 failed! If it does not show errors try again with `DEBUG=1 mix compile`")
-        {:error, []}
+        {:error, ["rebar3 failed! If it does not show errors try again with `DEBUG=1 mix compile`"]}
+    end
+  end
+
+  @impl true
+  def clean() do
+    rebar = Mix.Rebar.rebar_cmd(:rebar3)
+    cmd = "#{rebar} clean"
+
+    IO.puts("Running: #{cmd}")
+
+    case Mix.shell().cmd(cmd, print_app: true) do
+      0 ->
+        :ok
+
+      _other ->
+        {:error, ["rebar3 failed! If it does not show errors try again with `DEBUG=1 mix clean`"]}
     end
   end
 end
