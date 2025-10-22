@@ -11,7 +11,7 @@ defmodule MixRebar3.MixProject do
       # Hex
       description: "mix_rebar3 is a rebar3 compiler for your mix project",
       package: [
-        licenses: ["Apache 2.0"],
+        licenses: ["Apache-2.0"],
         maintainers: ["Dominic Letz"],
         links: %{"GitHub" => "https://github.com/dominicletz/mix_rebar3"}
       ]
@@ -23,6 +23,6 @@ defmodule MixRebar3.MixProject do
   end
 
   defp deps do
-    []
+    [{:ex_doc, "~> 0.30", only: :dev, runtime: false}]
   end
 end
