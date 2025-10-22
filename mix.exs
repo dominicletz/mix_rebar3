@@ -4,7 +4,7 @@ defmodule MixRebar3.MixProject do
   def project do
     [
       app: :mix_rebar3,
-      version: "0.2.0",
+      version: "0.3.0",
       elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
@@ -14,7 +14,7 @@ defmodule MixRebar3.MixProject do
         licenses: ["Apache 2.0"],
         maintainers: ["Dominic Letz"],
         links: %{"GitHub" => "https://github.com/dominicletz/mix_rebar3"}
-      ],
+      ]
     ]
   end
 
